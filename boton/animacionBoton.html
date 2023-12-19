@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+<style>
+/*animacion de tres puntos*/
+:root {
+  --main-color: #ecf0f1;
+  --point-color: #555;
+  --size: 5px;
+}
+/*posicion/disposicion para los loader__element */
+.loader {
+  overflow: hidden;
+  width: 60%;
+  height: 60%;
+  position: fixed;
+  top: 0; left: 0;
+  display: flex;
+  align-items: center;
+  align-content: center; 
+  justify-content: center;  
+  z-index: 100000;
+}
+
+.loader__element {
+  border-radius: 100%;
+  border: var(--size) solid var(--point-color);
+  margin: calc(var(--size)*2);
+}
+/*zoom del primer punto de la animacion*/
+.loader__element:nth-child(1) {
+  animation: preloader .6s ease-in-out alternate infinite;
+}
+/*zoom del segundo punto de la animacion*/
+.loader__element:nth-child(2) {
+  animation: preloader .6s ease-in-out alternate .2s infinite;
+}
+/*zoom del tercer punto de la animacion*/
+.loader__element:nth-child(3) {
+  animation: preloader .6s ease-in-out alternate .4s infinite;
+}
+/*tamaño maximo del zoom de los puntos*/
+@keyframes preloader {
+  100% { transform: scale(2); }
+}
+
+
+
+/********************* Animation property button ****************/
+/*especificacion y duracion de la animacion del boton*/
+button {
+  animation: wiggle 2s linear infinite;
+}
+
+/* Keyframes */
+/*animacion de tambleo de el boton de guardar*/
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+button {
+  position: absolute;
+  left: calc(50% - 3em);
+  top: calc(50% - 2em);
+  
+  height: 4em;
+  width: 7em;
+  
+  background: #444;
+  background: linear-gradient(top, #555, #333);
+  border: none;
+  border-top: 3px solid orange;
+  border-radius: 0 0 0.2em 0.2em;
+  color: #fff;
+  font-family: Helvetica, Arial, Sans-serif;
+  font-size: 1em;
+  transform-origin: 50% 5em;
+}
+
+
+</style>
+</head>
+<body>
+    
+<p>Esta es una prueba/ejemplo de animación. Explica el código CSS (el HTML no hace falta).</p>
+<button>Guardar</button>
+
+
+
+<div class="loader">
+  <span class="loader__element"></span>
+  <span class="loader__element"></span>
+  <span class="loader__element"></span>
+</div>
+
+
+</body>
+</html>

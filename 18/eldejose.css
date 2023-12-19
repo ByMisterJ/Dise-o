@@ -1,0 +1,12 @@
+.jose-half{
+    float: left;
+    width: 100%
+}
+.jose-half {
+    width: 49.99999%;
+    padding: 0 8px
+}
+
+.jose-hide-small {
+    display: none!important
+}

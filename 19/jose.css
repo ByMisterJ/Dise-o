@@ -1,0 +1,77 @@
+body{
+    font-family: "Trirong", monospace;
+}
+body.formulario-jose {
+    background-color: #f0f0f0; 
+    font-size: 18px; 
+    color: darkblue;
+}
+p{
+    color: black;
+}
+    
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+    
+input, select {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+    
+button {
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    
+h1,h2 {
+    text-align: center;
+}
+
+nav{
+    font-size: medium;
+}
+
+    .img-fluid-jose1{
+        max-width: 50%;
+        height: auto;
+    }
+    .img-fluid-jose2{
+        max-width: 70%;
+        height: auto;
+    }
+    .footertext{
+        font-size: medium;
+    }
+    .fakeimg {
+      height: 200px;
+      background: rgb(170,170,170)
+    }
+    .bg-green {
+      background-color: rgb(80, 133, 0);
+    }
+    
+    .h-good{
+      font-family: "Trirong", serif;
+    }
+    .img-fluid-jose1{
+      max-width: 50%;
+      height: auto;
+    }
+    .img-fluid-jose2{
+      max-width: 70%;
+      height: auto;
+    }

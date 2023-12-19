@@ -1,0 +1,13 @@
+$global: 'Times New Roman', Times, serif;
+
+.global{
+    color: black;
+    text-align: left;
+    font-family: $global;
+}
+
+#global{
+    color: black;
+    text-align: right;
+    font-family: $global;
+}

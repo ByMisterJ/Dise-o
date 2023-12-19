@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacion</title>
+    <style>
+        /* Animation property */
+        body {
+  background: #8acdeb;
+}
+#container {
+  position: absolute;
+  top: 47%;
+  left: 44%;
+  transform: translate(-50%, -50%);
+}
+.steam {
+  position: absolute;
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  background-color: #555555;
+  margin-top: -75px;
+  margin-left: 60px;
+  z-index: 0;
+  opacity: 0;
+}
+
+#steam1 {
+  -webkit-animation: steam1 4s ease-out infinite;
+  animation: steam1 4s ease-out infinite;
+}
+
+#steam3 {
+  -webkit-animation: steam1 4s ease-out 1s infinite;
+  animation: steam1 4s ease-out 1s infinite;
+}
+
+@-webkit-keyframes steam1 {
+  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
+  100% {transform: translateY(-200px) translateX(-20px) scale(1); opacity: 0;}
+}
+
+@keyframes steam1 {
+  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
+  100% {transform: translateY(-200px) translateX(-20px) scale(1); opacity: 0;}
+}
+
+#steam2 {
+  -webkit-animation: steam2 4s ease-out 0.5s infinite;
+  animation: steam2 4s ease-out 0.5s infinite;
+}
+
+#steam4 {
+  -webkit-animation: steam2 4s ease-out 1.5s infinite;
+  animation: steam2 4s ease-out 1.5s infinite;
+}
+
+@-webkit-keyframes steam2 {
+  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
+  100% {transform: translateY(-200px) translateX(20px) scale(1); opacity: 0;}
+}
+
+@keyframes steam2 {
+  0% {transform: translateY(0) translateX(0) scale(0.25); opacity: 0.2;}
+  100% {transform: translateY(-200px) translateX(20px) scale(1); opacity: 0;}
+}
+
+
+
+button {
+  animation: wiggle 2s linear infinite;
+}
+
+/* Keyframes */
+@keyframes wiggle {
+  0% {
+    transform: rotateZ(0);
+  }
+  7% {
+    transform: translateX(20px);
+  }
+  10% {
+    transform: rotateZ(-17deg);
+  }
+  14% {
+    transform: rotateZ(12deg);
+  }
+  18% {
+    transform: rotateZ(-12deg);
+  }
+  22% {
+    transform: rotateZ(8deg);
+  }
+  26% {
+    transform: rotateZ(-6deg);
+  }
+  40% {
+    transform: translateX(20px);
+  }
+  45% {
+    transform: translateX(-20px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  55% {
+    transform: translateY(20px);
+  }
+  60% {
+    transform: translateX(20px);
+  }
+  62% {
+    transform: rotateZ(6deg);
+  }
+  64% {
+    transform: rotateZ(-6deg);
+  }
+  66% {
+    transform: rotateZ(6deg);
+  }
+  68% {
+    transform: rotateZ(-6deg);
+  }
+
+  70% {
+    transform: rotateZ(0);
+  }
+}
+
+button {
+  position: absolute;
+  left: calc(50% - 3em);
+  top: calc(50% - 2em);
+  
+  height: 4em;
+  width: 7em;
+  
+  background: #444;
+  background: linear-gradient(top, #555, #333);
+  border: none;
+  border-radius: 0 0 0.2em 0.2em;
+  color: #fff;
+  font-family: Helvetica, Arial, Sans-serif;
+  font-size: 1em;
+  transform-origin: 50% 5em;
+}
+    </style>
+</head>
+<body>
+    <button>Ò#Ó</button>
+
+
+
+<div id="container">
+    <div class="steam" id="steam1"> </div>
+    <div class="steam" id="steam2"> </div>
+    <div class="steam" id="steam3"> </div>
+    <div class="steam" id="steam4"> </div>
+  
+</body>
+</html>

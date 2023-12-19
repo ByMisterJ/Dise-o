@@ -1,0 +1,86 @@
+/*TITULO PRINCIPAL CHINGON*/
+h2 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    font-size:xx-large;
+}
+
+div {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+/*BORDESITO PARA SEPARAR LAS SECCIONES*/
+li {
+    border-top-style: solid;
+    border-width: 1px;
+    list-style: none;
+}
+input, label {
+    display: block;
+    padding: 2px;
+}
+/*INPUT Y SELECT BONITOS CON ESTILO*/
+input, select {
+    display: block;
+    width: auto;
+    padding: 5px;
+    margin-bottom: 8px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+/*COLORCITO AZUL CUANDO EL RATON ESTA POR ENCIMA*/
+input[type=text] {
+  
+  border: 3px solid rgb(100, 100, 100);
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid blue;
+}
+
+/*CAMBIO DE COLOR AL li CUANDO EL RATON PASA POR ENCIMA*/
+li:hover{
+    background-color: lemonchiffon;
+}
+
+/*ESTILO DE LOS TITUOLOS DE CADA SECCION*/
+.titulo {
+    display: block;
+    font-size: large;
+    font-weight: bold;
+    float: left;
+    text-align: right;
+}
+
+/*BOTONR EN LA DERECHA*/
+.botones {
+    float: right;
+}
+
+/*ASTERISCO DEL CAMPO REQUERIDO EN ROJO*/
+.requerido {
+    color: red;
+}
+
+/*OCULTA LA AYUDA CUANDO NO PASA NADA*/
+.ayuda {
+    visibility: hidden;
+}
+
+/*MUESTRA LA AYUDA CUANDO EL RATON PASA POR ENCIMA*/
+li:hover>p {
+    visibility: visible;
+    text-align: right;
+    font-weight: bold;
+}
+
+/*LETRA CHIKITA PARA LOS LABELS*/
+span > label {
+    font-size: small;
+}
+
+.dostercios{
+    float: right;
+}

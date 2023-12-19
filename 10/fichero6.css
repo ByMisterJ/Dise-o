@@ -1,0 +1,35 @@
+body {
+  background-color: beige;
+}
+
+main {
+  max-width: 90%;
+  align-items: normal;
+}
+
+h1 {
+  color: darkblue;
+  text-align: center;
+}
+
+h2 {
+  color: darkred;
+  text-align: left;
+}
+
+p {
+  color: dimgray;
+  max-width: 75%;
+  text-align: left;
+}
+
+nav p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: black;
+}
+nav li {
+  list-style-type: square;
+}
+nav ul, nav ol {
+  margin-left: 5%;
+}/*# sourceMappingURL=fichero6.css.map */

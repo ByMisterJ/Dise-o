@@ -1,0 +1,29 @@
+body {
+    width: 960px;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    width: 700px;
+    float: right;
+}
+
+.d1 {
+    float: left ;
+    width: 260px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.box {
+    float: left;
+    width: 33.33%;
+    padding: 2px;
+}
+

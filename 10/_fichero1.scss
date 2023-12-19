@@ -1,0 +1,36 @@
+$corpo: beige;
+
+
+$mx-w90: 90%;
+$mx-w75: 75%;
+$clh1: darkblue;
+$clh2: darkred;
+$clp: dimgray;
+$algn: normal;
+$algc: center;
+$algl: left;
+
+body {
+    background-color: $corpo;
+}
+  
+main {
+    max-width: $mx-w90;
+    align-items: $algn;
+}
+
+h1{
+    color: $clh1;
+    text-align: $algc;
+}
+
+h2{
+    color: $clh2;
+    text-align: $algl;
+}
+
+p{
+    color: $clp;
+    max-width: $mx-w75;
+    text-align: $algl;
+}

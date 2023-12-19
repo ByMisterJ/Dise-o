@@ -1,0 +1,11 @@
+.global {
+  color: black;
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#global {
+  color: black;
+  text-align: right;
+  font-family: "Times New Roman", Times, serif;
+}/*# sourceMappingURL=fichero2.css.map */

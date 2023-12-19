@@ -1,0 +1,19 @@
+a:hover{
+    color: aqua;
+    font-size: large;
+}
+
+a:visited{
+    color: brown;
+}
+
+a:nth-child(n+4){
+    background-color: bisque;
+    font-weight: bold;
+}
+#oculto{
+    display: none;
+}
+#mostrar:hover + #oculto{
+    display: block;
+}

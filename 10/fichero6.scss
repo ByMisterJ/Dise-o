@@ -1,0 +1,19 @@
+@import 'fichero1';
+@mixin cosa{
+    nav{
+        p{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: black;
+        }
+        li{
+            list-style-type: square;
+        }
+        ul{
+            margin-left: 5%;
+        }
+        ol{
+            @extend ul;
+        }
+    }
+}
+@include cosa;
