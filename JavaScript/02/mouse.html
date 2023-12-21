@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        div {
+            width: 100px;
+            height: 50px;
+            background-color: lightblue;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        #elementoConEventos {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="elemento1">Elemento 1</div>
+    <div id="elemento2">Elemento 2</div>
+    <div id="elementoConEventos">Elemento con Eventos</div>
+
+    <script>
+        function mostrarAlerta(eventType) {
+            alert('Se activó el evento de ratón: ' + eventType);
+        }
+
+        // Agregar eventos a Elemento 1
+        document.getElementById('elemento1').addEventListener('click', function() {
+            mostrarAlerta('click');
+        });
+
+        document.getElementById('elemento1').addEventListener('mouseover', function() {
+            mostrarAlerta('mouseover');
+        });
+
+        // Agregar eventos a Elemento 2
+        document.getElementById('elemento2').addEventListener('mousedown', function() {
+            mostrarAlerta('mousedown');
+        });
+
+        document.getElementById('elemento2').addEventListener('mouseout', function() {
+            mostrarAlerta('mouseout');
+        });
+
+        // Agregar varios eventos al Elemento con Eventos
+        var elementoConEventos = document.getElementById('elementoConEventos');
+
+        elementoConEventos.addEventListener('mousemove', function() {
+            mostrarAlerta('mousemove');
+        });
+
+        elementoConEventos.addEventListener('mouseup', function() {
+            mostrarAlerta('mouseup');
+        });
+
+        elementoConEventos.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // Evita el menú contextual por defecto
+            mostrarAlerta('contextmenu');
+        });
+
+    </script>
+
+</body>
+</html>
