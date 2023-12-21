@@ -1,16 +1,28 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <style>
-    div{ width: 100px; height:100px;}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Event Example</title>
+  <script src="tres-bloques.js"></script>
+  <style>
+    div { 
+      width: 100px; height: 100px; margin: 10px;
+    }
+  </style>
 </head>
-<body>
-    
-    <div id="c1" style="background: red"></div>
-    
-    <div id="c2" style="background: white"></div>
-    
-    <div id="c3" style="background: blue"></div>
-    
+<body style="background-color: dimgray;">
+
+    <div id="c1" style="background: red" onmouseover="handleMouseOver('rojo')" onmouseout="handleMouseOut('rojo')"></div>
+
+    <div id="c2" style="background: white" onmouseover="handleMouseOver('blanco')" onmouseout="handleMouseOut('blanco')"></div>
+
+    <div id="c3" style="background: blue" onmouseover="handleMouseOver('azul')" onmouseout="handleMouseOut('azul')"></div>
+
+
 </body>
+</html>
+
     
