@@ -16,3 +16,9 @@ function primerAlert(){
     }
     
 }
+
+function ventanaAlert(){
+    alert("Página cargada")
+}
+
+window.addEventListener('load',ventanaAlert())

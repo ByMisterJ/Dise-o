@@ -1,0 +1,3 @@
+function bloq_bloq(){
+
+}
