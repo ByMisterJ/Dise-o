@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulación de Lista con jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function eliminarLista() {
+            $("#miLista").empty();
+        }
+
+        function restaurarLista() {
+            $("#miLista").html("<li>Item 1</li><li>Item 2</li><li>Item 3</li><li>Item 4</li>");
+        }
+
+        function anadirAlFinal() {
+            $("#miLista").append("<li>Nuevo Elemento</li>");
+        }
+
+        function anadirAlPrincipio() {
+            $("#miLista").prepend("<li>Nuevo Elemento</li>");
+        }
+
+        function eliminarUltimo() {
+            $("#miLista li:last-child").remove();
+        }
+
+        function eliminarPrimero() {
+            $("#miLista li:first-child").remove();
+        }
+
+        function eliminarPrimeroSegundo() {
+            $("#miLista li:first-child, #miLista li:nth-child(2)").remove();
+        }
+
+        function eliminarDosUltimos() {
+            $("#miLista li:last-child, #miLista li:nth-last-child(2)").remove();
+        }
+    </script>
+</head>
+<body>
+    <ul id="miLista">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <button onclick="eliminarLista()">Eliminar Lista</button>
+    <button onclick="restaurarLista()">Restaurar Lista</button>
+    <button onclick="anadirAlFinal()">Añadir al Final</button>
+    <button onclick="anadirAlPrincipio()">Añadir al Principio</button>
+    <button onclick="eliminarUltimo()">Eliminar Último</button>
+    <button onclick="eliminarPrimero()">Eliminar Primero</button>
+    <button onclick="eliminarPrimeroSegundo()">Eliminar 1° y 2°</button>
+    <button onclick="eliminarDosUltimos()">Eliminar Últimos 2</button>
+
+    
+</body>
+</html>

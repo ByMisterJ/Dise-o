@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulación de Lista con JavaScript</title>
+    <script>
+        function eliminarLista() {
+            var lista = document.getElementById("miLista");
+            lista.innerHTML = "";
+        }
+
+        function restaurarLista() {
+            var lista = document.getElementById("miLista");
+            lista.innerHTML = "<li>Item 1</li><li>Item 2</li><li>Item 3</li><li>Item 4</li>";
+        }
+
+        function anadirAlFinal() {
+            var lista = document.getElementById("miLista");
+            var nuevoElemento = document.createElement("li");
+            nuevoElemento.appendChild(document.createTextNode("Nuevo Elemento"));
+            lista.appendChild(nuevoElemento);
+        }
+
+        function anadirAlPrincipio() {
+            var lista = document.getElementById("miLista");
+            var nuevoElemento = document.createElement("li");
+            nuevoElemento.appendChild(document.createTextNode("Nuevo Elemento"));
+            lista.insertBefore(nuevoElemento, lista.firstChild);
+        }
+
+        function eliminarUltimo() {
+            var lista = document.getElementById("miLista");
+            var ultimoElemento = lista.lastElementChild;
+            lista.removeChild(ultimoElemento);
+        }
+
+        function eliminarPrimero() {
+            var lista = document.getElementById("miLista");
+            var primerElemento = lista.firstElementChild;
+            lista.removeChild(primerElemento);
+        }
+
+        function eliminarPrimeroSegundo() {
+            var lista = document.getElementById("miLista");
+            var primerElemento = lista.firstElementChild;
+            var segundoElemento = primerElemento.nextElementSibling;
+            lista.removeChild(primerElemento);
+            lista.removeChild(segundoElemento);
+        }
+
+        function eliminarDosUltimos() {
+            var lista = document.getElementById("miLista");
+            var ultimoElemento = lista.lastElementChild;
+            var penultimoElemento = ultimoElemento.previousElementSibling;
+            lista.removeChild(ultimoElemento);
+            lista.removeChild(penultimoElemento);
+        }
+    </script>
+</head>
+<body>
+    <ul id="miLista">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <button onclick="eliminarLista()">Eliminar Lista</button>
+    <button onclick="restaurarLista()">Restaurar Lista</button>
+    <button onclick="anadirAlFinal()">Añadir al Final</button>
+    <button onclick="anadirAlPrincipio()">Añadir al Principio</button>
+    <button onclick="eliminarUltimo()">Eliminar Último</button>
+    <button onclick="eliminarPrimero()">Eliminar Primero</button>
+    <button onclick="eliminarPrimeroSegundo()">Eliminar 1° y 2°</button>
+    <button onclick="eliminarDosUltimos()">Eliminar Últimos 2</button>
+
+    
+</body>
+</html>

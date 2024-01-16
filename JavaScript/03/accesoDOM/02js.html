@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería Fotográfica con JavaScript</title>
+    <style>
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            margin: 5px;
+            cursor: pointer;
+            transition: opacity 0.5s;
+        }
+
+        .gallery img.selected {
+            opacity: 1 !important;
+            border: 2px solid red;
+            transform: scale(1.2);
+        }
+
+        .gallery img:not(.selected) {
+            opacity: 0.4;
+        }
+    </style>
+    <script>
+        function selectImage(image) {
+            // Desactivar la clase 'selected' en todas las imágenes
+            var allImages = document.querySelectorAll('.gallery img');
+            allImages.forEach(function(img) {
+                img.classList.remove('selected');
+            });
+
+            // Activar la clase 'selected' solo en la imagen clicada
+            image.classList.add('selected');
+        }
+    </script>
+</head>
+<body>
+    <div class="gallery">
+        <img src="img/imagen1.jpg" alt="Imagen 1" onclick="selectImage(this)">
+        <img src="img/imagen2.jpg" alt="Imagen 2" onclick="selectImage(this)">
+        <img src="img/imagen3.jpg" alt="Imagen 3" onclick="selectImage(this)">
+        <!-- Agrega más imágenes según sea necesario -->
+    </div>
+
+</body>
+</html>
