@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mostrar/Ocultar Imágenes</title>
+    <title>Mostrar/Ocultar Imágenes con jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         #image-container {
             display: flex;
@@ -24,25 +25,17 @@
     </style>
     <script>
         function mostrarImagenes() {
-            var images = document.querySelectorAll('#image-container img');
-
-            images.forEach(function(image, index) {
-                setTimeout(function() {
-                    image.style.opacity = '1';
-                }, index * 1000); // Delay de 1 segundo entre cada imagen
+            $('#image-container img').each(function(index) {
+                $(this).delay(index * 1000).animate({ opacity: '1' }, 500);
             });
         }
 
         function ocultarImagenes() {
-            var images = document.querySelectorAll('#image-container img');
-
-            images.forEach(function(image) {
-                image.style.opacity = '0.1';
-            });
+            $('#image-container img').animate({ opacity: '0.1' }, 500);
         }
 
         function ocultarImagen(image) {
-            image.style.opacity = '0.1';
+            $(image).animate({ opacity: '0.1' }, 500);
         }
     </script>
 </head>
