@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de Memoria con jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .grid img {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid" id="game-board"></div>
+    <div id="result">0</div>
+
+    <script>
+        $(document).ready(function() {
+            // Card options
+            const cardArray = [
+                { name: 'fries', img: 'images/fries.png' },
+                { name: 'cheeseburger', img: 'images/cheeseburger.png' },
+                { name: 'ice-cream', img: 'images/ice-cream.png' },
+                { name: 'pizza', img: 'images/pizza.png' },
+                { name: 'milkshake', img: 'images/milkshake.png' },
+                { name: 'hotdog', img: 'images/hotdog.png' },
+                { name: 'fries', img: 'images/fries.png' },
+                { name: 'cheeseburger', img: 'images/cheeseburger.png' },
+                { name: 'ice-cream', img: 'images/ice-cream.png' },
+                { name: 'pizza', img: 'images/pizza.png' },
+                { name: 'milkshake', img: 'images/milkshake.png' },
+                { name: 'hotdog', img: 'images/hotdog.png' }
+            ];
+
+            cardArray.sort(() => 0.5 - Math.random());
+
+            const $grid = $('#game-board');
+            const $resultDisplay = $('#result');
+            let cardsChosen = [];
+            let cardsChosenId = [];
+            let cardsWon = [];
+
+            // Create your board
+            function createBoard() {
+                $.each(cardArray, function(i, card) {
+                    const $card = $('<img>')
+                        .attr('src', 'images/blank.png')
+                        .attr('data-id', i)
+                        .on('click', flipCard);
+                    $grid.append($card);
+                });
+            }
+
+            // Check for matches
+            function checkForMatch() {
+                const $cards = $('img', $grid);
+                const optionOneId = cardsChosenId[0];
+                const optionTwoId = cardsChosenId[1];
+
+                if (optionOneId == optionTwoId) {
+                    $cards.eq(optionOneId).attr('src', 'images/blank.png');
+                    $cards.eq(optionTwoId).attr('src', 'images/blank.png');
+                    alert('You have clicked the same image!');
+                } else if (cardsChosen[0] === cardsChosen[1]) {
+                    alert('You found a match');
+                    $cards.eq(optionOneId).attr('src', 'images/white.png');
+                    $cards.eq(optionTwoId).attr('src', 'images/white.png');
+                    $cards.eq(optionOneId).off('click', flipCard);
+                    $cards.eq(optionTwoId).off('click', flipCard);
+                    cardsWon.push(cardsChosen);
+                } else {
+                    $cards.eq(optionOneId).attr('src', 'images/blank.png');
+                    $cards.eq(optionTwoId).attr('src', 'images/blank.png');
+                    alert('Sorry, try again');
+                }
+                cardsChosen = [];
+                cardsChosenId = [];
+                $resultDisplay.text(cardsWon.length);
+                if (cardsWon.length === cardArray.length / 2) {
+                    $resultDisplay.text('Congratulations! You found them all!');
+                }
+            }
+
+            // Flip your card
+            function flipCard() {
+                const cardId = $(this).data('id');
+                cardsChosen.push(cardArray[cardId].name);
+                cardsChosenId.push(cardId);
+                $(this).attr('src', cardArray[cardId].img);
+                if (cardsChosen.length === 2) {
+                    setTimeout(checkForMatch, 500);
+                }
+            }
+
+            createBoard();
+        });
+    </script>
+</body>
+</html>
