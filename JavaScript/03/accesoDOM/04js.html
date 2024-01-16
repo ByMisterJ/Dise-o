@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar/Ocultar Imágenes</title>
+    <style>
+        #image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            cursor: pointer;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        img.hidden {
+            opacity: 0.1;
+        }
+    </style>
+    <script>
+        function mostrarImagenes() {
+            var images = document.querySelectorAll('#image-container img');
+
+            images.forEach(function(image, index) {
+                setTimeout(function() {
+                    image.style.opacity = '1';
+                }, index * 1000); // Delay de 1 segundo entre cada imagen
+            });
+        }
+
+        function ocultarImagenes() {
+            var images = document.querySelectorAll('#image-container img');
+
+            images.forEach(function(image) {
+                image.style.opacity = '0.1';
+            });
+        }
+
+        function ocultarImagen(image) {
+            image.style.opacity = '0.1';
+        }
+    </script>
+</head>
+<body>
+    <button onclick="mostrarImagenes()">Mostrar</button>
+    <button onclick="ocultarImagenes()">Ocultar</button>
+
+    <div id="image-container">
+        <img onclick="ocultarImagen(this)" src="images/cheeseburger.png" alt="Imagen 1">
+        <img onclick="ocultarImagen(this)" src="images/fries.png" alt="Imagen 2">
+        <img onclick="ocultarImagen(this)" src="images/hotdog.png" alt="Imagen 3">
+        <img onclick="ocultarImagen(this)" src="images/ice-cream.png" alt="Imagen 4">
+        <img onclick="ocultarImagen(this)" src="images/milkshake.png" alt="Imagen 5">
+        <img onclick="ocultarImagen(this)" src="images/pizza.png" alt="Imagen 6">
+        <img onclick="ocultarImagen(this)" src="images/fries.png" alt="Imagen 7">
+        <img onclick="ocultarImagen(this)" src="images/ice-cream.png" alt="Imagen 8">
+        <!-- Agrega más imágenes según sea necesario -->
+    </div>
+</body>
+</html>
