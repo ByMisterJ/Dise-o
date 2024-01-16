@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla Interactiva con jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            // Añadir eventos a las filas y celdas
+            $('#myTable td').on({
+                mouseover: function() {
+                    $(this).parent().css('background-color', '#e0e0e0');
+                },
+                mouseout: function() {
+                    $(this).parent().css('background-color', '');
+                },
+                click: function() {
+                    var valorActual = $(this).text().trim();
+                    var nuevoValor = prompt('Introduce el nuevo valor:', valorActual);
+
+                    if (nuevoValor !== null) {
+                        $(this).text(nuevoValor);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Columna 1</th>
+                <th>Columna 2</th>
+                <th>Columna 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+        </tbody>
+    </table>
+</body>
+</html>
