@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería Fotográfica con jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            margin: 5px;
+            cursor: pointer;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .gallery img.selected {
+            opacity: 1 !important;
+            border: 2px solid red;
+            transform: scale(1.2);
+        }
+
+        .gallery img:not(.selected) {
+            opacity: 0.4;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $(".gallery img").click(function() {
+                // Remover la clase 'selected' de todas las imágenes
+                $(".gallery img").removeClass("selected");
+
+                // Agregar la clase 'selected' solo a la imagen clicada
+                $(this).addClass("selected");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="gallery">
+        <img src="img/imagen1.jpg" alt="Imagen 1">
+        <img src="img/imagen2.jpg" alt="Imagen 2">
+        <img src="img/imagen3.jpg" alt="Imagen 3">
+        <!-- Agrega más imágenes según sea necesario -->
+    </div>
+</body>
+</html>
