@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Límite de Caracteres</title>
+</head>
+<body>
+
+<!-- Caja de texto con contador de caracteres -->
+<input type="text" id="cajaTexto" maxlength="100" oninput="contarCaracteres()" />
+
+<!-- Contador de caracteres restantes -->
+<span id="contador"></span>
+
+<script>
+  function contarCaracteres() {
+    var cajaTexto = document.getElementById('cajaTexto');
+    var contador = document.getElementById('contador');
+    
+    // Obtener el número de caracteres ingresados
+    var caracteresIngresados = cajaTexto.value.length;
+
+    // Calcular los caracteres restantes
+    var caracteresRestantes = 100 - caracteresIngresados;
+
+    // Actualizar el contador
+    contador.textContent = 'Caracteres restantes: ' + caracteresRestantes;
+  }
+</script>
+
+</body>
+</html>

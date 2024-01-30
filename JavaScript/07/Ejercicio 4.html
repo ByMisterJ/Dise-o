@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coordenadas del Ratón</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    #info {
+      position: fixed;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="info"></div>
+
+  <script>
+    document.addEventListener('mousemove', function(event) {
+      var infoDiv = document.getElementById('info');
+      
+      // Coordenadas en la pantalla
+      var screenX = event.screenX;
+      var screenY = event.screenY;
+
+      // Coordenadas en la página
+      var pageX = event.pageX;
+      var pageY = event.pageY;
+
+      // Coordenadas en la ventana del navegador
+      var clientX = event.clientX;
+      var clientY = event.clientY;
+
+      infoDiv.innerHTML = `
+        <p>Coordenadas en la pantalla (screenX, screenY) (se basa en la relativa posición de tu ratón con respecto a tu monitor): (${screenX}, ${screenY})</p>
+        <p>Coordenadas en la página (pageX, pageY) se basa en la relativa posición de tu ratón con respecto a tu documento html): (${pageX}, ${pageY})</p>
+        <p>Coordenadas en el navegador (clientX, clientY) se basa en la relativa posición de tu ratón con respecto a tu navegador): (${clientX}, ${clientY})</p>
+      `;
+    });
+  </script>
+</body>
+</html>

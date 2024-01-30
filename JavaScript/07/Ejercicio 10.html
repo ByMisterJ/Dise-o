@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularios con Validación</title>
+  <style>
+    .error {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Formulario de Datos Personales</h2>
+<form id="formularioDatosPersonales">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" class="requerido texto" />
+
+  <label for="apellido">Apellido:</label>
+  <input type="text" id="apellido" name="apellido" class="requerido texto" />
+
+  <label for="telefono">Teléfono:</label>
+  <input type="tel" id="telefono" name="telefono" class="requerido numeros" pattern="[0-9]{9}" />
+
+  <label for="correo">Correo Electrónico:</label>
+  <input type="email" id="correo" name="correo" class="requerido email" />
+
+  <label for="dni">DNI:</label>
+  <input type="text" id="dni" name="dni" class="requerido dni" pattern="[0-9]{8}[A-Za-z]" />
+
+  <button type="button" onclick="validarDatosPersonales()">Enviar Datos Personales</button>
+</form>
+
+<h2>Formulario de Dirección</h2>
+<form id="formularioDireccion">
+  <label for="direccion">Dirección:</label>
+  <input type="text" id="direccion" name="direccion" class="requerido texto" />
+
+  <label for="codigoPostal">Código Postal:</label>
+  <input type="text" id="codigoPostal" name="codigoPostal" class="requerido numeros" pattern="[0-9]{5}" />
+
+  <label for="localidad">Localidad:</label>
+  <input type="text" id="localidad" name="localidad" class="requerido texto" />
+
+  <label for="provincia">Provincia:</label>
+  <input type="text" id="provincia" name="provincia" class="requerido texto" />
+
+  <button type="button" onclick="validarDireccion()">Enviar Dirección</button>
+</form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Colocar el foco en el segundo elemento del primer formulario (apellido)
+    document.getElementById('apellido').focus();
+  });
+
+  function validarDatosPersonales() {
+    var elementos = document.getElementById('formularioDatosPersonales').elements;
+
+    // Iterar sobre los elementos y realizar la validación
+    for (var i = 0; i < elementos.length; i++) {
+      var elemento = elementos[i];
+
+      // Limpiar estilos de error
+      elemento.classList.remove('error');
+
+      // Validar si el campo es requerido y está vacío
+      if (elemento.classList.contains('requerido') && elemento.value.trim() === '') {
+        alert('Por favor, complete todos los campos requeridos.');
+        elemento.classList.add('error');
+        return;
+      }
+
+      // Validar según el tipo de campo
+      if (elemento.classList.contains('numeros') && !/^\d+$/.test(elemento.value)) {
+        alert('El campo ' + elemento.name + ' debe contener solo números.');
+        elemento.classList.add('error');
+        return;
+      }
+
+      if (elemento.classList.contains('dni') && !/^\d{8}[A-Za-z]$/.test(elemento.value)) {
+        alert('El campo ' + elemento.name + ' debe tener formato correcto (ocho dígitos y una letra).');
+        elemento.classList.add('error');
+        return;
+      }
+
+      if (elemento.classList.contains('email') && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(elemento.value)) {
+        alert('El campo ' + elemento.name + ' debe tener formato de correo electrónico válido.');
+        elemento.classList.add('error');
+        return;
+      }
+    }
+
+    alert('Datos Personales Válidos');
+  }
+
+  function validarDireccion() {
+    var elementos = document.getElementById('formularioDireccion').elements;
+
+    // Iterar sobre los elementos y realizar la validación
+    for (var i = 0; i < elementos.length; i++) {
+      var elemento = elementos[i];
+
+      // Limpiar estilos de error
+      elemento.classList.remove('error');
+
+      // Validar si el campo es requerido y está vacío
+      if (elemento.classList.contains('requerido') && elemento.value.trim() === '') {
+        alert('Por favor, complete todos los campos requeridos.');
+        elemento.classList.add('error');
+        return;
+      }
+
+      // Validar según el tipo de campo
+      if (elemento.classList.contains('numeros') && !/^\d+$/.test(elemento.value)) {
+        alert('El campo ' + elemento.name + ' debe contener solo números.');
+        elemento.classList.add('error');
+        return;
+      }
+    }
+
+    alert('Dirección Válida');
+  }
+</script>
+
+</body>
+</html>

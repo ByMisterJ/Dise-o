@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zonas de Color</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .zona {
+      width: 50vw;
+      height: 50vh;
+      position: absolute;
+    }
+
+    #rojo { background-color: red; top: 0; left: 0; }
+    #amarillo { background-color: yellow; top: 0; left: 50vw; }
+    #azul { background-color: blue; top: 50vh; left: 0; }
+    #verde { background-color: green; top: 50vh; left: 50vw; }
+
+    /* Estilos adicionales para que el cursor cambie al pasar sobre las zonas */
+    .zona:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    function obtenerColorZona(id) {
+      switch (id) {
+        case 'rojo':
+          return 'Rojo';
+        case 'amarillo':
+          return 'Amarillo';
+        case 'azul':
+          return 'Azul';
+        case 'verde':
+          return 'Verde';
+        default:
+          return 'Desconocido';
+      }
+    }
+
+    document.addEventListener('click', function(event) {
+      var zonaClicada = event.target.id;
+      var colorZona = obtenerColorZona(zonaClicada);
+
+      if (colorZona !== 'Desconocido') {
+        alert('Has hecho clic en la zona de color: ' + colorZona);
+      }
+    });
+  </script>
+
+  <div id="rojo" class="zona"></div>
+  <div id="amarillo" class="zona"></div>
+  <div id="azul" class="zona"></div>
+  <div id="verde" class="zona"></div>
+
+</body>
+</html>

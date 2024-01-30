@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zona del Ratón</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    function tamanoVentanaNavegador() {
+      var ancho = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var alto = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      return { ancho: ancho, alto: alto };
+    }
+
+    function obtenerZonaRaton(event, tamanoVentana) {
+      var mitadAncho = tamanoVentana.ancho / 2;
+      var mitadAlto = tamanoVentana.alto / 2;
+
+      var x = event.clientX;
+      var y = event.clientY;
+
+      if (x < mitadAncho) {
+        if (y < mitadAlto) {
+          return 'Izquierda Arriba';
+        } else {
+          return 'Izquierda Abajo';
+        }
+      } else {
+        if (y < mitadAlto) {
+          return 'Derecha Arriba';
+        } else {
+          return 'Derecha Abajo';
+        }
+      }
+    }
+
+    document.addEventListener('click', function(event) {
+      var tamanoVentana = tamanoVentanaNavegador();
+      var zonaRaton = obtenerZonaRaton(event, tamanoVentana);
+
+      alert('Has pulsado en la zona: ' + zonaRaton);
+    });
+  </script>
+</body>
+</html>
